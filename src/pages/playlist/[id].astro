@@ -1,0 +1,10 @@
+---
+import AppLayout from '@layouts/AppLayout.astro';
+const { id } = Astro.params;
+---
+
+<AppLayout>
+    <div class="relative h-full">
+        <h1>Playlist {id}</h1>
+    </div>
+</AppLayout>

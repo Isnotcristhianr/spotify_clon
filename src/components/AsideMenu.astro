@@ -1,20 +1,35 @@
 ---
-import LibraryIcon from "../icons/LibraryIcon.astro";
-import SideMenu from "./SideMenu.astro";
-import MoreIcon from "../icons/MoreIcon.astro";
+import LibraryIcon from "@icons/LibraryIcon.astro";
+import SideMenu from "@components/SideMenu.astro";
+import MoreIcon from "@icons/MoreIcon.astro";
+import SearchIcon from "@icons/SearchIcon.astro";
+//paylist
+import { playlists } from "@lib/data";
+import SideMenuCard from "@components/SideMenuCard.astro";
 ---
 
 <nav class="flex flex-col gap-2 flex-1">
-    <div class="bg-zinc-900 rounded-lg h-full">
-        <ul>
-            <SideMenu href="/#">
-                <LibraryIcon />
-                <span>Tu Biblioteca</span>
-                <div class="flex flex-1 justify-end mr-4">
-                    <MoreIcon />
-                </div>
-            </SideMenu>
-        </ul>
-        
-    </div>
+  <div class="rounded-lg h-full">
+    <ul>
+      <SideMenu href="/#">
+        <LibraryIcon />
+        <span>Tu Biblioteca</span>
+        <div class="flex flex-1 justify-end mr-4">
+          <MoreIcon />
+        </div>
+      </SideMenu>
+      <SideMenu href="/#">
+        <input
+          type="text"
+          placeholder="Buscar"
+          class="bg-transparent outline-none text-sm"
+        />
+        <SearchIcon />
+      </SideMenu>
+      <hr class="border-t border-zinc-800 my-1" />
+    </ul>
+    <ul>
+      {playlists.map((playlist) => <SideMenuCard playlist={playlist} />)}
+    </ul>
+  </div>
 </nav>

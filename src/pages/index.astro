@@ -1,35 +1,8 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import AsideMenu from '../components/AsideMenu.astro';
-import TopMenu from '../components/TopMenu.astro';
+import AppLayout from '@layouts/AppLayout.astro';
+import Main from '@components/Main.astro';
 ---
 
-<Layout>
-	<div id="app" class="relative h-screen p-2 gap-2">
-		<header class="[grid-area:top] min-h-[50px] ">
-			<TopMenu />
-		</header>
-		<aside class="[grid-area:aside] flex-col overflow-y-auto rounded-lg">
-			  <AsideMenu />
-		</aside>
-		<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
-		  <h1>Main</h1>
-		  <slot />
-		</main>
-		<footer class="[grid-area:player] min-h-[100px] ">
-		</footer>
-	  </div>
-</Layout>
-
-<style>
-	#app {
-	  display: grid;
-	  grid-template-areas:
-	  	"top top top"
-		"aside main main"
-		"player player player";
-	  grid-template-columns: 300px 1fr;
-	  grid-template-rows: auto 1fr auto;
-	}
-  </style>
+<AppLayout>
+    <Main />
+</AppLayout>
