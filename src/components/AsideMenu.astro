@@ -4,8 +4,8 @@ import SideMenu from "./SideMenu.astro";
 import MoreIcon from "../icons/MoreIcon.astro";
 ---
 
-<nav class="flex flex-col gap-2">
-    <div>
+<nav class="flex flex-col gap-2 flex-1">
+    <div class="bg-zinc-900 rounded-lg h-full">
         <ul>
             <SideMenu href="/#">
                 <LibraryIcon />
@@ -15,5 +15,6 @@ import MoreIcon from "../icons/MoreIcon.astro";
                 </div>
             </SideMenu>
         </ul>
+        
     </div>
 </nav>
