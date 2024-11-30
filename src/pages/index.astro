@@ -1,11 +1,30 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import AsideMenu from '../components/AsideMenu.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<div id="app" class="relative h-screen p-2 gap-2">
+		<aside class="[grid-area:aside] flex-col overflow-y-auto">
+			  <AsideMenu />
+		</aside>
+		<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
+		  <h1>Main</h1>
+		  <slot />
+		</main>
+		<footer class="[grid-area:player] min-h-[100px] ">
+		</footer>
+	  </div>
 </Layout>
+
+<style>
+	#app {
+	  display: grid;
+	  grid-template-areas:
+		"aside main main"
+		"player player player";
+	  grid-template-columns: 300px 1fr;
+	  grid-template-rows: 1fr auto;
+	}
+  </style>
