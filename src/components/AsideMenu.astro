@@ -1,6 +1,19 @@
 ---
 import LibraryIcon from "../icons/LibraryIcon.astro";
-import SpotifyIcon from "../icons/SpotifyIcon.astro";
+import SideMenu from "./SideMenu.astro";
+import MoreIcon from "../icons/MoreIcon.astro";
 ---
 
-<LibraryIcon />
+<nav class="flex flex-col gap-2">
+    <div>
+        <ul>
+            <SideMenu href="/#">
+                <LibraryIcon />
+                <span>Tu Biblioteca</span>
+                <div class="flex flex-1 justify-end mr-4">
+                    <MoreIcon />
+                </div>
+            </SideMenu>
+        </ul>
+    </div>
+</nav>

@@ -2,11 +2,15 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import AsideMenu from '../components/AsideMenu.astro';
+import TopMenu from '../components/TopMenu.astro';
 ---
 
 <Layout>
 	<div id="app" class="relative h-screen p-2 gap-2">
-		<aside class="[grid-area:aside] flex-col overflow-y-auto">
+		<header class="[grid-area:top] min-h-[50px] ">
+			<TopMenu />
+		</header>
+		<aside class="[grid-area:aside] flex-col overflow-y-auto rounded-lg">
 			  <AsideMenu />
 		</aside>
 		<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
@@ -22,9 +26,10 @@ import AsideMenu from '../components/AsideMenu.astro';
 	#app {
 	  display: grid;
 	  grid-template-areas:
+	  	"top top top"
 		"aside main main"
 		"player player player";
 	  grid-template-columns: 300px 1fr;
-	  grid-template-rows: 1fr auto;
+	  grid-template-rows: auto 1fr auto;
 	}
   </style>
