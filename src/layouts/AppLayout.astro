@@ -2,7 +2,8 @@
 import Layout from './Layout.astro';
 import AsideMenu from '@components/AsideMenu.astro';
 import TopMenu from '@components/TopMenu.astro';
-
+import { ViewTransitions } from 'astro:transitions';
+import { Player } from '@components/player.jsx';
 interface Props {
     title?: string;
 }
@@ -19,10 +20,11 @@ const { title } = Astro.props;
             <AsideMenu />
         </aside>
         <main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
+            <ViewTransitions fallback='none' />
             <slot />
         </main>
-        <footer class="[grid-area:player] min-h-[100px]">
-            player
+        <footer class="[grid-area:player] min-h-[75px]">
+            <Player client:load transition:name="media-player" transition:persist/>
         </footer>
     </div>
 </Layout>

@@ -2,18 +2,7 @@
 import { playlists } from "@lib/data";
 import PlaylistItem from "@components/PlaylistItem.astro";
 import PlayListCard from "@components/PlayListCard.astro";
-// Obtener la hora actual
-const currentHour = new Date().getHours();
-
-// Determinar el saludo según la hora
-let greeting = "";
-if (currentHour < 12) {
-    greeting = "Buenos días";
-} else if (currentHour < 19) {
-    greeting = "Buenas tardes"; 
-} else {
-    greeting = "Buenas noches";
-}
+import Greeting from "@components/Greeting.svelte";
 ---
 
 <div id="playlist-container"
@@ -22,8 +11,8 @@ if (currentHour < 12) {
      
     <div class="relative z-10 px-4 p-2">
         <!-- Saludos -->
-         <h2 class="text-3xl font-bold text-zinc-800">{greeting}</h2>
-         <p class="text-zinc-800">Encuentra tu playlist favorita</p>
+        <Greeting client:visible/>
+         <p class="text-white">Encuentra tu playlist favorita</p>
          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
             {playlists.map((playlist) => <PlaylistItem playlist={playlist} />)}
          </div>

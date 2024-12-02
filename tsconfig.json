@@ -3,12 +3,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@icons/*": ["src/icons/*"],
-      "@lib/*": ["src/lib/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@components/*": ["src/components/*"]
-    }
+      "@/*": [
+        "src/*"
+      ],
+      "@icons/*": [
+        "src/icons/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "include": [
     ".astro/types.d.ts",
