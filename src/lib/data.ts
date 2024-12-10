@@ -64,22 +64,6 @@ export const playlists: Playlist[] = [
       "https://f4.bcbits.com/img/a0363730459_16.jpg",
     artists: ["WFS", "Nadav Cohen"],
   },
-  {
-    id: '7',
-    albumId: 7,
-    title: "Midnight Dreams",
-    color: colors.red,
-    cover: "https://i.discogs.com/XAnjXxSfaP9Z01x45OowAfOQd4vDujcBr6Es8a90YDM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNzUz/OTI3LTE1MDM3MDQ3/NTQtNTc4OC5qcGVn.jpeg",
-    artists: ["Luna", "Stellar", "Moonbeam"],
-  },
-  {
-    id: '8',
-    albumId: 8,
-    title: "Urban Melodies",
-    color: colors.gray,
-    cover: "https://i.discogs.com/LZnScxsYPsP8r9gJi3ypZczOse3jlhMfiSDGERayAeE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NzMx/NDYtMTMwNjMyNDgz/OS5qcGVn.jpeg", 
-    artists: ["City Lights", "Metro"],
-  }
 ];
 
 export const morePlaylists = playlists.map((item) => ({
@@ -334,58 +318,4 @@ export const songs: Song[] = [
     "album": "Chill Lo-Fi Music",
     "duration": "2:54"
   },
-  {
-    "id": 1,
-    "albumId": 6,
-    "title": "Dawn Breeze",
-    "image": "https://f4.bcbits.com/img/a0363730459_16.jpg",
-    "artists": ["WFS"],
-    "album": "Like a Necessity",
-    "duration": "2:45"
-  },
-  {
-    "id": 2,
-    "albumId": 6,
-    "title": "Gentle Rain",
-    "image": "https://f4.bcbits.com/img/a0363730459_16.jpg",
-    "artists": ["WFS", "Nadav Cohen"],
-    "album": "Like a Necessity",
-    "duration": "3:12"
-  },
-  {
-    "id": 1,
-    "albumId": 7,
-    "title": "Starlight Dreams",
-    "image": "https://f4.bcbits.com/img/a2534592965_16.jpg",
-    "artists": ["Luna", "Stellar"],
-    "album": "Midnight Dreams",
-    "duration": "3:22"
-  },
-  {
-    "id": 2,
-    "albumId": 7,
-    "title": "Cosmic Journey",
-    "image": "https://f4.bcbits.com/img/a2534592965_16.jpg",
-    "artists": ["Luna", "Moonbeam"],
-    "album": "Midnight Dreams",
-    "duration": "2:58"
-  },
-  {
-    "id": 1,
-    "albumId": 8,
-    "title": "City Pulse",
-    "image": "https://f4.bcbits.com/img/a0121098992_16.jpg",
-    "artists": ["City Lights"],
-    "album": "Urban Melodies",
-    "duration": "3:15"
-  },
-  {
-    "id": 2,
-    "albumId": 8,
-    "title": "Metro Groove",
-    "image": "https://f4.bcbits.com/img/a0121098992_16.jpg",
-    "artists": ["Metro"],
-    "album": "Urban Melodies",
-    "duration": "2:48"
-  }
 ]
