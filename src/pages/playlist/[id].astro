@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro"
 import { allPlaylists, songs } from "@/lib/data"
 import AppLayout from "@/layouts/AppLayout.astro"
+import MusicsTable from "@/components/MusicsTable.astro"
 
 const { id } = Astro.params
 
@@ -52,5 +53,7 @@ const playListSongs = songs.filter((song) => song.albumId === playlist?.albumId)
       </div>
     </header> 
 
+    <!-- Musics Table -->
+    <MusicsTable songs={playListSongs} />
   </div>
 </AppLayout>

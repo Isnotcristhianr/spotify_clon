@@ -1,0 +1,74 @@
+---
+import TimeIcon from "@/icons/TimeIcon.astro";
+import { type Song } from "@/lib/data";
+import PlayIcon from "@/icons/PlayIcon.astro";
+
+interface Props {
+  songs: Song[];
+}
+
+const { songs } = Astro.props;
+---
+
+<table class="table-auto text-left min-w-full divide-y divide-gray-500/20">
+  <thead class="">
+    <tr class="text-gray-400 text-sm uppercase">
+      <th class="px-4 py-2 w-14">#</th>
+      <th class="px-4 py-2">Título</th>
+      <th class="px-4 py-2 hidden md:table-cell">Álbum</th>
+      <th class="px-4 py-2"><TimeIcon /></th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      songs.map((song, index) => (
+        <tr class="text-gray-400 text-sm hover:bg-white/10 rounded-lg transition duration-300 group">
+          <td class="px-4 py-3 relative">
+            <span class="group-hover:hidden">{index + 1}</span>
+            <button class="hidden group-hover:block w-4 h-4 text-white" title="Reproducir {song.title}">
+              <PlayIcon />
+            </button>
+          </td>
+          <td class="px-4 py-3 flex gap-3">
+            <picture class="w-10 h-10 flex-shrink-0">
+              <img
+                src={song.image}
+                alt={song.title}
+                class="w-10 h-10 rounded"
+              />
+            </picture>
+            <div class="flex flex-col">
+              <h3 class="text-white text-base font-normal">{song.title}</h3>
+              <span class="text-sm">{song.artists.join(", ")}</span>
+            </div>
+          </td>
+          <td class="px-4 py-3 hidden md:table-cell">{song.album}</td>
+          <td class="px-4 py-3">{song.duration}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<script>
+  document.querySelectorAll('tr').forEach(row => {
+    const playButton = row.querySelector('button')
+    if (!playButton) return
+
+    playButton.addEventListener('click', () => {
+      const songTitle = row.querySelector('h3')?.textContent
+      const songArtist = row.querySelector('span')?.textContent
+      const songImage = row.querySelector('img')?.src
+
+      const event = new CustomEvent('play-song', {
+        detail: {
+          title: songTitle,
+          artist: songArtist,
+          image: songImage
+        }
+      })
+      
+      document.dispatchEvent(event)
+    })
+  })
+</script>
