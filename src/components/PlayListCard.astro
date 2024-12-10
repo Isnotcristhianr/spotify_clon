@@ -1,14 +1,14 @@
 ---
-import type { Playlist } from "@/lib/data"
-
+import type { Playlist } from "@/lib/data";
+import { CardPlayButton } from "@/components/CardPlayButton";
 interface Props {
-  playlist: Playlist
+  playlist: Playlist;
 }
 
-const { playlist } = Astro.props
-const { id, cover, title, artists, color } = playlist
+const { playlist } = Astro.props;
+const { id, cover, title, artists, color } = playlist;
 
-const artistsString = artists.join(", ")
+const artistsString = artists.join(", ");
 ---
 
 <article
@@ -21,8 +21,8 @@ const artistsString = artists.join(", ")
     z-10
   `
   >
-<!--     <CardPlayButton id={id} client:visible />
- -->  </div>
+    <CardPlayButton id={id} client:visible />
+  </div>
 
   <a
     href={`/playlist/${id}`}
