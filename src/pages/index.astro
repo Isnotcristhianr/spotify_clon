@@ -1,8 +1,17 @@
 ---
 import AppLayout from '@layouts/AppLayout.astro';
 import Main from '@components/Main.astro';
+import CardSongs from "@/components/CardSongs.astro";
+import { playlists } from "@/lib/data";
 ---
 
 <AppLayout>
     <Main />
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 px-6">
+      {
+        playlists.map((playlist) => (
+          <CardSongs playlist={playlist} />
+        ))
+      }
+    </div>
 </AppLayout>
