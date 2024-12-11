@@ -1,1 +1,0 @@
-import{u as a}from"./playerStore.C_Wwg2uk.js";import"./index.DHQ29l5n.js";const s=a.getState();document.querySelectorAll(".play-button").forEach(t=>{t instanceof HTMLElement&&t.addEventListener("click",e=>{e.preventDefault(),e.stopPropagation();const r=t.dataset.playlistId;r&&(s.setCurrentMusic({playlistId:r,songId:1,songs:[]}),s.setIsPlaying(!0))})});
